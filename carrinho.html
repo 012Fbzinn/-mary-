@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: transparent;
+            color: #222;
+        }
+
+        section.layout {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .principal {
+            flex: 1;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header.cabeçalho {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 248, 249, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(255, 182, 193, 0.2);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ff6f91;
+            text-decoration: none;
+        }
+
+        .menu-links {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            align-items: center;
+            position: relative;
+        }
+
+        .menu-links a i {
+            font-size: 1.6rem;
+            color: #ff3b6f;
+        }
+
+        #toggle-theme {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #ff6f91;
+        }
+
+        .produtos h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #ff3b6f;
+        }
+
+        .container-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card-produto {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+            background-color: #f8f0f5;
+            border-radius: 20px;
+            padding: 20px;
+            gap: 20px;
+            width: 100%;
+            min-height: 180px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card-produto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(255, 182, 193, 0.3);
+        }
+
+        .card-produto .imagem-produto {
+            width: 150px;
+            height: auto;
+            border-radius: 15px;
+            flex-shrink: 0;
+            transition: border 0.3s ease;
+        }
+
+        .info-produto {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .info-produto h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #ff3b6f;
+        }
+
+        .info-produto p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #eba5b8;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .btn-remover {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #ff6f91;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-remover:hover {
+            transform: translateY(-2px);
+            background-color: #ff3b6f;
+        }
+
+        .btn-comprar {
+            padding: 12px 28px;
+            font-size: 1rem;
+            background: linear-gradient(90deg, #ffb6c1, #ff8fa3);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.3s ease;
+        }
+
+        .btn-comprar:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(90deg, #ff8fa3, #ff6f91);
+        }
+
+        .rodapé {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+            color: #ff3b6f;
+            margin-top: 40px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        /* ==================== CHECKBOX PREMIUM ==================== */
+        .produto-checkbox {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            appearance: none;
+            border-radius: 50%;
+            border: 2px solid #ff6f91;
+            background: #fff;
+            display: none;
+            transition: all 0.3s ease;
+        }
+
+        .produto-checkbox:checked {
+            background: #ff6f91;
+            box-shadow: 0 0 10px rgba(255, 111, 145, 0.5);
+        }
+
+        .produto-checkbox:checked+img {
+            border: 3px solid #ff6f91;
+            border-radius: 20px;
+        }
+
+        /* ==================== BADGE ==================== */
+        .cart-link {
+            position: relative;
+        }
+
+        .cart-link #cart-count {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ff6f91;
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ==================== ALERT ==================== */
+        .msg-alert {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffb6c1;
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(255, 182, 193, 0.3);
+            font-weight: 600;
+            display: none;
+            z-index: 1000;
+            animation: fadeinout 3s forwards;
+        }
+
+        @keyframes fadeinout {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -10px);
+            }
+
+            10% {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+
+            90% {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -10px);
+            }
+        }
+
+        /* ==================== MODO ESCURO ==================== */
+        body.dark-mode {
+            background-color: #121212;
+            color: #fdf0f5;
+        }
+
+        body.dark-mode .cabeçalho {
+            background-color: rgba(30, 30, 30, 0.95);
+            box-shadow: 0 2px 10px rgba(255, 182, 193, 0.1);
+        }
+
+        body.dark-mode .menu-links a,
+        body.dark-mode .logo {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .card-produto {
+            background-color: #333;
+        }
+
+        body.dark-mode .rodapé {
+            background-color: #1e1e1e;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="layout">
+        <header class="cabeçalho">
+            <a href="mary.html" class="logo">Mary</a>
+            <nav class="menu-links">
+                <a href="mary.html#sobre-nos"><i class="fas fa-home"></i></a>
+                <a href="mary.html#produtos"><i class="fas fa-box"></i></a>
+                <a href="#contatos"><i class="fas fa-envelope"></i></a>
+                <a href="carrinho.html" class="cart-link"><i class="fas fa-shopping-cart"></i><span
+                        id="cart-count">0</span></a>
+            </nav>
+            <i id="toggle-theme" class="fas fa-moon"></i>
+        </header>
+
+        <main class="principal">
+            <section class="produtos">
+                <h2>Meu Carrinho</h2>
+                <div class="container-cards" id="cart-container"></div>
+            </section>
+            <div style="text-align:center; margin-top:20px;">
+                <button id="btn-comprar" class="btn-comprar">Comprar</button>
+            </div>
+        </main>
+
+        <footer class="rodapé">
+            <p>mariany</p>
+        </footer>
+    </section>
+
+    <div class="msg-alert" id="alert-msg">Selecione pelo menos um produto!</div>
+
+    <script>
+        // TEMA
+        const toggleThemeButton = document.getElementById('toggle-theme');
+        toggleThemeButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            toggleThemeButton.classList.toggle('fa-moon');
+            toggleThemeButton.classList.toggle('fa-sun');
+        });
+
+        // CARRINHO
+        const cartCountElement = document.getElementById('cart-count');
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+        function atualizarContador() { cartCountElement.textContent = carrinho.length; }
+        function salvarCarrinho() { localStorage.setItem('carrinho', JSON.stringify(carrinho)); atualizarContador(); }
+
+        function renderizarCarrinho() {
+            const cartContainer = document.getElementById('cart-container');
+            cartContainer.innerHTML = '';
+            if (carrinho.length === 0) {
+                cartContainer.innerHTML = '<p>Seu carrinho está vazio.</p>';
+                return;
+            }
+            carrinho.forEach((produto, index) => {
+                const card = document.createElement('div');
+                card.classList.add('card-produto');
+                card.innerHTML = `
+            <input type="checkbox" class="produto-checkbox" value="${index}" />
+            <img src="${produto.imagem}" alt="${produto.nome}" class="imagem-produto" />
+            <div class="info-produto">
+                <h3>${produto.nome}</h3>
+                <p>${produto.descricao}</p>
+                <button class="btn-remover" data-index="${index}">Remover</button>
+            </div>
+        `;
+                cartContainer.appendChild(card);
+            });
+
+            document.querySelectorAll('.btn-remover').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const index = e.target.getAttribute('data-index');
+                    carrinho.splice(index, 1);
+                    salvarCarrinho();
+                    renderizarCarrinho();
+                });
+            });
+        }
+
+        // ALERTA
+        function mostrarAlerta() {
+            const msg = document.getElementById('alert-msg');
+            msg.style.display = 'block';
+            setTimeout(() => { msg.style.display = 'none'; }, 3000);
+        }
+
+        // COMPRAR
+        document.getElementById('btn-comprar').addEventListener('click', () => {
+            document.querySelectorAll('.card-produto input.produto-checkbox').forEach((el, i) => {
+                setTimeout(() => { el.style.display = 'flex'; el.style.opacity = 1; }, i * 100);
+            });
+
+            const selecionados = Array.from(document.querySelectorAll('.card-produto input.produto-checkbox'))
+                .filter(cb => cb.checked)
+                .map(cb => carrinho[cb.value].nome);
+
+            if (selecionados.length === 0) {
+                mostrarAlerta();
+                return;
+            }
+
+            const mensagem = encodeURIComponent("Olá! Gostaria de comprar os seguintes produtos:\n- " + selecionados.join("\n- "));
+            const numero = "5511970612871";
+            window.open(`https://wa.me/${numero}?text=${mensagem}`, "_blank");
+        });
+
+        // INICIALIZAÇÃO
+        atualizarContador();
+        renderizarCarrinho();
+    </script>
+</body>
+
+</html>

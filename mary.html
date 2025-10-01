@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mary</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Tela de carregamento -->
+    <div id="loading-screen">
+        <a href="mary.html" class="logo">Mary</a>
+    </div>
+
+    <section class="layout">
+        <!-- Cabeçalho do site -->
+        <header class="cabeçalho">
+            <a href="mary.html" class="logo animate-logo">Mary</a>
+            <nav class="menu-links">
+                <a href="#sobre-nos" data-text="INÍCIO"><i class="fas fa-home"></i></a>
+                <a href="#produtos" data-text="PRODUTO"><i class="fas fa-box"></i></a>
+                <a href="#contatos" data-text="CONTATOS"><i class="fas fa-envelope"></i></a>
+                <a href="carrinho.html" class="cart-link" data-text="CARRINHO">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </nav>
+            <i id="toggle-theme" class="fas fa-moon"></i>
+        </header>
+
+        <!-- Conteúdo principal do site -->
+        <main class="principal">
+            <!-- Seção sobre a empresa -->
+            <section id="sobre-nos" class="sobre-empresa">
+                <div class="texto">
+                    <h2>Sobre Nós</h2>
+                    <p>
+                        Somos uma empresa dedicada à criação de perfumes únicos e sofisticados. <br>
+                        Cada fragrância é cuidadosamente desenvolvida para proporcionar uma experiência <br>
+                        inesquecível, combinando qualidade e elegância.
+                    </p>
+                </div>
+                <div class="imagem">
+                    <img src="perfume2.png" alt="Imagem de perfume" />
+                </div>
+            </section>
+
+            <!-- Seção de produtos -->
+            <section id="produtos" class="produtos">
+                <h2>Nossos Produtos</h2>
+                <div class="container-cards">
+
+                    <div class="card-produto">
+                        <img src="mary.jpeg" alt="Imagem do produto" class="imagem-produto" />
+                        <div class="info-produto">
+                            <h3>Mary</h3>
+                            <p>🌸 Elegância e leveza em cada detalhe. A fragrância para momentos únicos.</p>
+                            <a href="produtos.mary.html" class="btn-comprar" target="_blank">Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="card-produto">
+                        <img src="daniel.jpg" alt="Imagem do produto" class="imagem-produto" />
+                        <div class="info-produto">
+                            <h3>Daniel</h3>
+                            <p>💎 Intensidade e presença. Daniel é o perfume que conquista por onde passa.</p>
+                            <a href="produtos.daniel.html" class="btn-comprar" target="_blank">Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="card-produto">
+                        <img src="julia.jpg" alt="Imagem do produto" class="imagem-produto" />
+                        <div class="info-produto">
+                            <h3>Julia</h3>
+                            <p>🌟 Jovem e vibrante. Julia é a fragrância da modernidade e da atitude.</p>
+                            <a href="produtos.julia.html" class="btn-comprar" target="_blank">Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="card-produto">
+                        <img src="ana.jpg" alt="Imagem do produto" class="imagem-produto" />
+                        <div class="info-produto">
+                            <h3>Ana</h3>
+                            <p>🌺 Delicadeza e frescor. Ana é a escolha perfeita para quem ama suavidade.</p>
+                            <a href="produtos.ana.html" class="btn-comprar" target="_blank">Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="card-produto">
+                        <img src="kaio.jpg" alt="Imagem do produto" class="imagem-produto" />
+                        <div class="info-produto">
+                            <h3>Kaio</h3>
+                            <p>⚡ Energia e ousadia. Kaio é feito para quem não passa despercebido.</p>
+                            <a href="produtos.kaio.html" class="btn-comprar" target="_blank">Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="card-produto">
+                        <img src="miguel.jpg" alt="Imagem do produto" class="imagem-produto" />
+                        <div class="info-produto">
+                            <h3>Miguel</h3>
+                            <p>🌌 Misterioso e marcante. Miguel é perfeito para noites especiais.</p>
+                            <a href="produtos.miguel.html" class="btn-comprar" target="_blank">Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="card-produto">
+                        <img src="eduardo.jpg" alt="Imagem do produto" class="imagem-produto" />
+                        <div class="info-produto">
+                            <h3>Eduardo</h3>
+                            <p>👔 Clássico e elegante. Eduardo traduz respeito e sofisticação.</p>
+                            <a href="produtos.eduardo.html" class="btn-comprar" target="_blank">Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="card-produto">
+                        <img src="isabelle.jpg" alt="Imagem do produto" class="imagem-produto" />
+                        <div class="info-produto">
+                            <h3>Isabelle</h3>
+                            <p>encantadora e sonhadora, como Jasmine, ela brilha ainda mais ao lado de Yago.</p>
+                            <a href="produtos.isabelle.html" class="btn-comprar" target="_blank">Detalhes</a>
+                        </div>
+                    </div>
+
+                    <div class="card-produto">
+                        <img src="yago.jpg" alt="Imagem do produto" class="imagem-produto" />
+                        <div class="info-produto">
+                            <h3>Yago</h3>
+                            <p>ousado e aventureiro, como Aladdin, ele se completa perfeitamente com Isabelle.</p>
+                            <a href="produtos.yago.html" class="btn-comprar" target="_blank">Detalhes</a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- Rodapé do site -->
+        <footer class="rodapé">
+            <p>mariany</p>
+        </footer>
+    </section>
+
+    <!-- Script -->
+    <script>
+        // ================= TEMA CLARO/ESCURO =================
+        const toggleThemeButton = document.getElementById('toggle-theme');
+        const body = document.body;
+
+        toggleThemeButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                toggleThemeButton.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                toggleThemeButton.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+
+        // ================= TELA DE CARREGAMENTO =================
+        window.addEventListener('load', () => {
+            const loadingScreen = document.getElementById('loading-screen');
+            setTimeout(() => {
+                loadingScreen.style.opacity = '0';
+                loadingScreen.style.transition = 'opacity 1s ease';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 1000);
+            }, 2000);
+        });
+
+        // ================= CARRINHO PERSISTENTE =================
+        const cartCountElement = document.getElementById('cart-count');
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        cartCountElement.textContent = carrinho.length;
+
+        cartCount.textContent = carrinho.length;
+        cartCount.classList.add("updated");
+        setTimeout(() => cartCount.classList.remove("updated"), 300);
+
+    </script>
+    <style>
+        /* ================= ESTILOS ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            height: 100%;
+            background-color: transparent;
+            color: #222;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Tela de carregamento */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff8f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 1s ease;
+        }
+
+        #loading-screen .logo {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ffb6c1;
+            text-decoration: none;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Cabeçalho */
+        .cabeçalho {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            background: rgba(255, 248, 249, 0.95);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(255, 182, 193, 0.2);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ff6f91;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .logo:hover {
+            color: #ff3b6f;
+        }
+
+        .menu-links {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .menu-links a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .menu-links a:hover {
+            background-color: #ffe6f0;
+        }
+
+        .menu-links a i {
+            font-size: 1.6rem;
+            color: #ff3b6f;
+            transition: color 0.3s ease;
+        }
+
+        .menu-links a:hover i {
+            color: #ff3b6f;
+        }
+
+        .menu-links a::after {
+            content: attr(data-text);
+            position: absolute;
+            bottom: -28px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff6f91;
+            color: #fff;
+            font-size: 0.8rem;
+            padding: 4px 8px;
+            border-radius: 6px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .menu-links a:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(4px);
+        }
+
+        #toggle-theme {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            color: #ff6f91;
+        }
+
+        #toggle-theme:hover {
+            color: #ff3b6f;
+        }
+
+        /* Conteúdo principal */
+        .principal {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sobre-empresa {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .sobre-empresa .texto {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .sobre-empresa .texto h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #eba5b8;
+        }
+
+        .sobre-empresa .texto p {
+            font-size: 1rem;
+            line-height: 1.6;
+            font-weight: 700;
+        }
+
+        .sobre-empresa .imagem {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .sobre-empresa .imagem img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(255, 182, 193, 0.2);
+        }
+
+        /* Produtos */
+        .produtos h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #ff3b6f;
+        }
+
+        .container-cards {
+            display: flex;
+            flex-direction: column;
+            /* uma coluna só */
+            gap: 20px;
+            /* espaço entre os cards */
+            align-items: center;
+            /* centraliza os cards */
+        }
+
+        .card-produto {
+            display: flex;
+            flex-direction: row;
+            /* imagem e texto lado a lado */
+            align-items: center;
+            background-color: #f8f0f5;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 6px 15px rgba(255, 182, 193, 0.2);
+            gap: 20px;
+            width: 90%;
+            /* ocupa quase toda a largura da tela */
+            min-height: 180px;
+            /* altura mínima igual para todos */
+        }
+
+        .card-produto .imagem-produto {
+            width: 150px;
+            /* largura fixa da imagem */
+            height: auto;
+            border-radius: 15px;
+            flex-shrink: 0;
+            /* garante que a imagem não encolha */
+        }
+
+        .info-produto {
+            flex: 1;
+            /* ocupa o restante do card */
+        }
+
+
+        .container-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card-produto {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #f8f0f5;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 6px 15px rgba(255, 182, 193, 0.2);
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card-produto .imagem-produto {
+            flex: 1;
+            max-width: 300px;
+            border-radius: 15px;
+        }
+
+        .info-produto {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .info-produto h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #ff3b6f;
+        }
+
+        .info-produto p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #eba5b8;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .btn-comprar {
+            padding: 12px 28px;
+            font-size: 1rem;
+            background: linear-gradient(90deg, #ffb6c1, #ff8fa3);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 6px 12px rgba(255, 182, 193, 0.3);
+            transition: transform 0.2s ease, background 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-comprar:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(90deg, #ff8fa3, #ff6f91);
+        }
+
+        /* Rodapé */
+        .rodapé {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 248, 249, 0.95);;
+            color: #ff3b6f;
+            margin-top: 40px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            font-weight: 600;
+        }
+
+        /* Estilo do contador do carrinho */
+        .cart-link #cart-count {
+            display: inline-block;
+            background-color: #ff3b6f;
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 50%;
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            text-align: center;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        /* Modo escuro */
+        body.dark-mode {
+            background-color: #121212;
+            color: #fdf0f5;
+        }
+
+        body.dark-mode .cabeçalho {
+            background-color: rgba(30, 30, 30, 0.95);
+            box-shadow: 0 2px 10px rgba(255, 182, 193, 0.1);
+        }
+
+        body.dark-mode .menu-links a,
+        body.dark-mode .logo {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .menu-links a::after {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .card-produto {
+            background-color: #333;
+        }
+
+        body.dark-mode .menu-links a i,
+        body.dark-mode #toggle-theme {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .menu-links a:hover i,
+        body.dark-mode #toggle-theme:hover {
+            color: #ff69b4;
+        }
+
+        body.dark-mode .rodapé {
+            background-color: #1e1e1e;
+        }
+
+        .animate-logo {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+    </style>
+    </style>
+</body>
+
+</html>
